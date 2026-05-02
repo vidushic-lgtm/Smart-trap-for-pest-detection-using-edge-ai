@@ -32,7 +32,7 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 
 ### 🧱 Hardware:
 - Arduino Nicla Vision (Edge AI device with camera)  
-- Custom-built pest trap structure (PVC + funnel mechanism)  
+- Custom-built pest trap structure (funnel mechanism)  
 - USB connection for data monitoring  
 
 ### 💻 Software:
@@ -89,7 +89,7 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 ## 📊 Model Performance (Edge Impulse - Validation Set)
 
 ![Model Performance](model_performance.png)
-
+![Model Performance](model_dashboard.png)
 ### 🔍 Key Metrics:
 - **F1 Score (Overall):** 80.6%  
 - **Precision (non-background):** 0.85  
@@ -204,7 +204,7 @@ A key enhancement of this system is the integration of a **solar panel-based pow
 ## 📚 References
 
 - Edge Impulse Project:  
-https://studio.edgeimpulse.com/public/978052/latest/impulse/1/validation  
+https://studio.edgeimpulse.com/public/978052/latest 
 
 - Hakim, A., Srivastava, A.K., Hamza, A. et al. Yolo-pest: an optimized YoloV8x for detection of small insect pests using smart traps. Sci Rep 15, 14029 (2025). https://doi.org/10.1038/s41598-025-97825-3
 - Dataset: https://drive.google.com/drive/folders/18k9gkIcmcYhsyWR97ovj2kXOyMpKNC5l?usp=sharing
