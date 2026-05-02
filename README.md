@@ -90,29 +90,36 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 
 ![Model Performance](images/model_performance.png)
 ![Model Performance](images/model_dashboard.png)
-### 🔍 Key Metrics:
-- **F1 Score (Overall):** 80.6%  
-- **Precision (non-background):** 0.85  
-- **Recall (non-background):** 0.77  
+## 📈 Model Training & Validation Performance
+
+![Model Performance](images/model_performance.png)
+
+### 🔹 Overall Performance
+- **F1 Score (Validation):** 80.6%  
+- **Precision:** 0.85  
+- **Recall:** 0.77  
 - **F1 Score (non-background):** 0.81  
 
-### 🧠 Class-wise Performance:
+### 🔹 Class-wise Performance
 - **Bactrocera dorsalis:** 84.1% accuracy (F1: 0.83)  
 - **Bactrocera zonata:** 67.9% accuracy (F1: 0.78)  
 
-### ⚙️ On-Device Performance (Nicla Vision):
-- **Inference Time:** ~392 ms  
-- **Peak RAM Usage:** 218.1 KB  
-- **Flash Usage:** 81.2 KB  
-- **Model Type:** Quantized (int8, EON Compiler optimized)  
+### 🔹 Confusion Analysis
+- The model performs better on *dorsalis* compared to *zonata*  
+- Around **32% of zonata samples are misclassified as background**  
+- This is due to visual similarity and limited dataset size  
 
-### 📌 Insights:
-- The model performs well for *dorsalis* but shows moderate confusion with *zonata* due to visual similarity.  
-- Quantization enables efficient deployment on microcontrollers with minimal memory and power usage.  
+---
 
-### ⚖️ Trade-offs:
-- Faster inference but lower precision compared to YOLO  
-- Suitable for real-time embedded systems  
+## 🧪 Model Testing (Real-World Performance)
+
+*(Use the same model dashboard image OR add another screenshot if available)*
+
+![Testing Output](images/model_dashboard.png)
+
+### 🔹 Test Accuracy
+- **Accuracy:** 61.86%  
+
 
 ---
 
@@ -124,6 +131,11 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 - Flash onto Nicla Vision  
 
 ### 📟 On-device Output:
+![Testing Output](images/model_dashboard.png)
+
+### 🔹 Test Accuracy
+- **Accuracy:** 61.86%  
+
 
 ### ⚙️ Performance:
 - Real-time inference on device  
