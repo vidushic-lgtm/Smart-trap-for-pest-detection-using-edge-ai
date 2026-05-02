@@ -215,4 +215,4 @@ https://studio.edgeimpulse.com/public/978052/latest/impulse/1/validation
 > This project replaces heavy cloud-based AI models with a lightweight Edge AI system, enabling real-time, low-power, and scalable pest monitoring directly in agricultural fields.
 
 ##Team Members
-![Team members](groupmembers.jpeg)
+![Team members](group_members.jpeg)
