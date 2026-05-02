@@ -136,7 +136,7 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 
 ### 🧱 Hardware Prototype
 
--  ![Smart trap with funnel entry](prototype.png) 
+- Smart trap prototype ![Smart trap with funnel entry](prototype.png) 
 - Arduino Nicla vision mounted for detection
 
 The developed prototype consists of a cylindrical pest trap with a funnel-based entry mechanism to capture insects. The camera (Nicla Vision) is mounted strategically to monitor the internal chamber for real-time pest detection.
@@ -214,4 +214,5 @@ https://studio.edgeimpulse.com/public/978052/latest/impulse/1/validation
 
 > This project replaces heavy cloud-based AI models with a lightweight Edge AI system, enabling real-time, low-power, and scalable pest monitoring directly in agricultural fields.
 
----
+##Team Members
+![Team members](groupmembers.jpeg)
