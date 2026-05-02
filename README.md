@@ -1,5 +1,18 @@
 # Smart-trap-for-pest-detection-using-edge-ai
 
+
+## 📁 Repository Structure
+
+```text
+.
+├── dataset/               # Data images
+├── models/                # model file to deploy on nicla vision
+├── images/                # Photos of the prototype and model graphs
+└── README.md              # Project overview and documentation (this file)
+````
+
+---
+
 ## 1. Problem Statement, Motivation & Objectives
 
 Fruit flies such as *Bactrocera dorsalis* and *Bactrocera zonata* are major agricultural pests causing significant crop losses in fruits like mango and guava. These pests lay eggs inside fruits, making early detection difficult and leading to economic losses ranging from 40–80%. Traditional monitoring methods such as pheromone traps and manual counting are labor-intensive, time-consuming, and inefficient.
@@ -79,26 +92,20 @@ This project implements an AI-powered smart pest detection system using a FOMO (
   - Lower accuracy vs high efficiency  
 
 ---
+## 📊 Model Compression & Performance
 
-## 6. Model Compression & Efficiency Metrics
 
-### ⚡ Techniques:
-- Quantization (8-bit model for edge deployment)  
+- The trained model was evaluated in both **quantized (int8)** and **unoptimized (float32)** formats to assess its suitability for deployment on edge devices like Arduino Nicla Vision.
 - Lightweight architecture (FOMO instead of YOLO)  
 
-## 📊 Model Performance (Edge Impulse - Validation Set)
+### ⚙️ Quantized Model (int8)
+- **Latency:** ~395 ms  
+- **RAM Usage:** ~409 KB  
+- **Flash Usage:** ~70.9 KB
+  
+![Model Performance](images/model_training_quantised.png)
 
-![Model Performance](images/model_performance.png)
-![Model Performance](images/model_dashboard.png)
-## 📈 Model Training & Validation Performance
-
-![Model Performance](images/model_performance.png)
-
-### 🔹 Overall Performance
-- **F1 Score (Validation):** 80.6%  
-- **Precision:** 0.85  
-- **Recall:** 0.77  
-- **F1 Score (non-background):** 0.81  
+![Model Performance](images/training_quantised.png)
 
 ### 🔹 Class-wise Performance
 - **Bactrocera dorsalis:** 84.1% accuracy (F1: 0.83)  
@@ -109,19 +116,18 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 - Around **32% of zonata samples are misclassified as background**  
 - This is due to visual similarity and limited dataset size  
 
----
+This version is optimized for microcontrollers and enables real-time inference with low memory consumption.
 
-## 🧪 Model Testing (Real-World Performance)
-
-*(Use the same model dashboard image OR add another screenshot if available)*
-
-![Testing Output](images/model_dashboard.png)
-
-### 🔹 Test Accuracy
+### ⚠️ Unoptimized Model (float32)
+- **RAM Usage:** ~1.5 MB  
 - **Accuracy:** 61.86%  
+![Model Performance](images/model_training_unoptimised.png)
 
+![Model Performance](images/training_unoptimised.png)
+The float32 model requires significantly higher memory and is not suitable for deployment on resource-constrained devices.
 
----
+### 📌 Insight
+Quantization reduces model size and memory usage drastically, enabling efficient edge deployment with a minor trade-off in accuracy.
 
 ## 7. Model Deployment & On-Device Performance
 
@@ -131,7 +137,9 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 - Flash onto Nicla Vision  
 
 ### 📟 On-device Output:
-![Testing Output](images/model_dashboard.png)
+![Testing Output](images/model_testing.png)
+
+![Model_Dashboard](images/model_dashboard.png)
 
 ### 🔹 Test Accuracy
 - **Accuracy:** 61.86%  
@@ -148,7 +156,9 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 
 ### 🧱 Hardware Prototype
 
-- Smart trap prototype ![Smart trap with funnel entry](images/prototype.png) 
+- Smart trap prototype
+  ![Smart trap with funnel entry](images/prototype.png) 
+
 - Arduino Nicla vision mounted for detection
 
 The developed prototype consists of a cylindrical pest trap with a funnel-based entry mechanism to capture insects. The camera (Nicla Vision) is mounted strategically to monitor the internal chamber for real-time pest detection.
@@ -243,5 +253,10 @@ You can explore the full impulse design and training configuration here:
 * **Vidushi Chauhan**
 * **Mentor:** Prof. Pandarasamy Arjunan, RBCCPS, Indian Institute of Science.
 
+## 🎬 Demo (Real-Time Detection)
+
+[Watch Video](https://drive.google.com/file/d/1K4FhcsBA7uPIIPDK51qnXIg_3JbTPAKb/view)
+
 For questions, feedback, or collaboration opportunities, please contact: **[samy@iisc.ac.in](mailto:samy@iisc.ac.in)**
+Course link: https://www.samy101.com/edge-ai-26/
 
