@@ -33,7 +33,7 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 ### 🧱 Hardware:
 - Arduino Nicla Vision (Edge AI device with camera)  
 - Custom-built pest trap structure (funnel mechanism)  
-- USB connection for data monitoring  
+  
 
 ### 💻 Software:
 - Edge Impulse (model training & deployment)  
