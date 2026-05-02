@@ -92,11 +92,6 @@ The model predicts **2 object classes** (non-background):
   - Bactrocera dorsalis  
   - Bactrocera zonata  
 
-### Train / Test Split
-
-* **81%** of samples used for **training**
-* **19%** used for **testing**
-* **20% of the training set** is further reserved as a **validation set**
 
 ---
 
