@@ -204,7 +204,7 @@ A key enhancement of this system is the integration of a **solar panel-based pow
 ## 📚 References
 
 - Hakim, A., Srivastava, A.K., Hamza, A. et al. Yolo-pest: an optimized YoloV8x for detection of small insect pests using smart traps. Sci Rep 15, 14029 (2025). https://doi.org/10.1038/s41598-025-97825-3
-- Dataset: https://drive.google.com/drive/folders/18k9gkIcmcYhsyWR97ovj2kXOyMpKNC5l?usp=sharing  (obtained from same paper)
+- Dataset: https://data.mendeley.com/datasets/hgz2n5jxhp/1  (obtained from same paper)
 ---
 
 ## 🧠 Key Innovation
