@@ -57,41 +57,68 @@ This project implements an AI-powered smart pest detection system using a FOMO (
 
 ## 4. Data Collection & Dataset Preparation
 
-- Dataset sourced from research paper dataset (publicly available) :contentReference[oaicite:1]{index=1}  
-- Focused on 2 classes:
+- Dataset sourced from research paper dataset: https://data.mendeley.com/datasets/hgz2n5jxhp/1  (publicly available)
+- Focused on 3 classes:
   - Bactrocera dorsalis  
-  - Bactrocera zonata  
+  - Bactrocera zonata
+  - Background class: added by edge impulse means no insect
 
 ### 📊 Dataset Details:
 - ~500 images used (subset of larger dataset)  
-- Images include lab + field conditions  
+- Images include lab + field conditions
+
+
+---
+## 5. Model Design, Training & Evaluation
+
+## 🧠 Model Design: FOMO for TinyML
+
+We use **Edge Impulse FOMO (Faster Objects, More Objects)** for TinyML-based object detection.
+
+### Model Architecture
+
+* Backbone: **MobileNetV2 0.35** (lightweight CNN)
+* Detection head: **FOMO** (grid-based object detection)
+* Designed to provide **class + approximate location** while fitting into a **microcontroller** memory and compute budget.
+
+### Input Configuration
+
+* Input image: **128 × 128 RGB**
+* Flattened feature dimension: **49,152**
+
+### Output Classes
+
+The model predicts **2 object classes** (non-background):
+  - Bactrocera dorsalis  
+  - Bactrocera zonata  
+
+### Train / Test Split
+
+* **81%** of samples used for **training**
+* **19%** used for **testing**
+* **20% of the training set** is further reserved as a **validation set**
+
+---
+
+## 🧪 Training Details (Edge Impulse)
+
+The Keras-based object detection block in Edge Impulse uses a **FOMO-specific training script** with:
+
+* **Loss:** Weighted cross-entropy (using `object_weight` to emphasize objects vs. background)
+* **Epochs:** `100`
+* **Learning rate:** `0.001`
+* **Batch size:** `32`
+* **Backbone width multiplier (alpha):** `0.35`
+* **Checkpointing:** Best weights selected based on **validation F1 score (`val_f1`)**
+
+After training, an explicit **softmax** layer is added to ensure per-cell probabilities are properly normalized.
 
 ### 🛠️ Preprocessing:
 - Image labeling (bounding boxes → converted to FOMO grid)  
 - Data cleaning  
 - Class balancing (limited dataset)  
 
----
 
-## 5. Model Design, Training & Evaluation
-
-### 🧠 Model:
-- Type: FOMO (lightweight CNN-based object detection)  
-- Designed for edge devices  
-
-### ⚙️ Training:
-- Platform: Edge Impulse  
-- Train/Test split applied  
-- Optimized for low memory  
-
-### 📈 Evaluation:
-- Metric: Confidence score (0–1)  
-- Typical results:
-  - 0.6–0.75 confidence (real-time detection)  
-- Trade-off:
-  - Lower accuracy vs high efficiency  
-
----
 ## 📊 Model Compression & Performance
 
 
