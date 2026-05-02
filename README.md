@@ -203,16 +203,33 @@ A key enhancement of this system is the integration of a **solar panel-based pow
 
 ## 📚 References
 
-- Edge Impulse Project:  
-https://studio.edgeimpulse.com/public/978052/latest 
-
 - Hakim, A., Srivastava, A.K., Hamza, A. et al. Yolo-pest: an optimized YoloV8x for detection of small insect pests using smart traps. Sci Rep 15, 14029 (2025). https://doi.org/10.1038/s41598-025-97825-3
-- Dataset: https://drive.google.com/drive/folders/18k9gkIcmcYhsyWR97ovj2kXOyMpKNC5l?usp=sharing
+- Dataset: https://drive.google.com/drive/folders/18k9gkIcmcYhsyWR97ovj2kXOyMpKNC5l?usp=sharing  (obtained from same paper)
 ---
 
 ## 🧠 Key Innovation
 
 > This project replaces heavy cloud-based AI models with a lightweight Edge AI system, enabling real-time, low-power, and scalable pest monitoring directly in agricultural fields.
 
-##Team Members
-![Team members](group_members.jpeg)
+
+You can explore the full impulse design and training configuration here:
+
+👉 **Public Edge Impulse Project:**
+[Link](https://studio.edgeimpulse.com/public/978052/latest)
+
+---
+
+## 👥 Team
+
+![Team](images/group_members.jpeg)
+
+(L to R in above image)
+
+* **Vishal Kumar Verma** 
+* **Suruchi Singh**
+* **Ragavi Saravanan**
+* **Vidushi Chauhan**
+* **Mentor:** Prof. Pandarasamy Arjunan, RBCCPS, Indian Institute of Science.
+
+For questions, feedback, or collaboration opportunities, please contact: **[samy@iisc.ac.in](mailto:samy@iisc.ac.in)**
+
